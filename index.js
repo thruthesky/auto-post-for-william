@@ -36,9 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var Nightmare = require("nightmare");
-var FacebookUsers = [
-    { id: 'thruthesky@hanmail.net', passwrod: 'Asdf99**' }
-];
+var config_1 = require("./config");
 var AutoPost = (function () {
     function AutoPost() {
         this.nightmare = new Nightmare({
@@ -67,8 +65,8 @@ var AutoPost = (function () {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.nightmare.goto("https://m.facebook.com")
                             .wait('[name="email"]')
-                            .type('[name="email"]', FacebookUsers[0].id)
-                            .type('[name="pass"]', FacebookUsers[0].passwrod)
+                            .type('[name="email"]', config_1.FacebookAccount.id)
+                            .type('[name="pass"]', config_1.FacebookAccount.passwrod)
                             .click('[name="login"]')
                             .wait(2000)
                             .goto('https://m.facebook.com/stories.php')
